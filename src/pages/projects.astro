@@ -1,0 +1,141 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  {
+    title: 'Hot/Cold Storage Architecture for Large-Scale Imaging',
+    description: 'A reference architecture for a multi-service Go system with gateway ACL, hot/cold object storage, LRU eviction, and multi-cloud support. Designed for serving millions of large binary objects on-demand from archive storage.',
+    tags: ['Go', 'Kubernetes', 'GCP', 'Azure', 'Redis'],
+    github: null,
+    status: 'Coming Soon',
+  },
+  {
+    title: 'Django API Optimization: From 48 Queries to 1',
+    description: 'Step-by-step optimization of a Django REST Framework API using CTE rewrites, N+1 elimination, polymorphic bypass, and a three-tier caching strategy. Includes benchmarks at each stage.',
+    tags: ['Python', 'Django', 'PostgreSQL', 'Redis'],
+    github: null,
+    status: 'Coming Soon',
+  },
+  {
+    title: 'Kubernetes Deployment Patterns',
+    description: 'Helm charts demonstrating blue-green deployments, proper probe configuration (exec vs tcpSocket trade-offs), multi-environment config management, and node pool tuning.',
+    tags: ['Kubernetes', 'Helm', 'DevOps'],
+    github: null,
+    status: 'Coming Soon',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Projects" description="Open-source projects and reference architectures by Aatman Mantri." />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Projects</h1>
+      <p class="subtitle">Reference architectures and open-source work. Repos in progress — blogs come first.</p>
+
+      <div class="project-list">
+        {projects.map((project) => (
+          <article class="project-card">
+            <div class="project-header">
+              <h2>{project.title}</h2>
+              {project.status && <span class="badge">{project.status}</span>}
+            </div>
+            <p>{project.description}</p>
+            <div class="tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            {project.github && (
+              <a href={project.github} target="_blank" class="github-link">
+                View on GitHub &rarr;
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--accent);
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .project-header h2 {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--bg-code);
+    color: var(--accent);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .project-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+  .github-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+  }
+</style>

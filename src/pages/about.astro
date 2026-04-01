@@ -1,63 +1,103 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="About" description="About Aatman Mantri — backend engineer building distributed systems and cloud infrastructure." />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>About</h1>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+      <p>
+        I'm a backend engineer who builds and operates production systems at scale.
+        My work sits at the intersection of systems design, API performance, and cloud infrastructure.
+      </p>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+      <h2>What I Work On</h2>
+      <ul>
+        <li><strong>Distributed systems in Go</strong> — multi-service architectures with gateway patterns, hot/cold storage orchestration, and LRU caching</li>
+        <li><strong>API performance in Python/Django</strong> — eliminating N+1 queries, multi-tier caching strategies, CTE-based query optimization</li>
+        <li><strong>Kubernetes &amp; cloud infrastructure</strong> — Helm chart management, blue-green deployments, probe optimization, multi-cloud (GCP + Azure)</li>
+        <li><strong>Medical imaging systems</strong> — DICOMweb servers, pathology viewing pipelines, large-scale image storage and retrieval</li>
+      </ul>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+      <h2>Tech Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-category">
+          <h3>Languages</h3>
+          <p>Go, Python, SQL</p>
+        </div>
+        <div class="tech-category">
+          <h3>Frameworks</h3>
+          <p>Django / DRF, FastAPI, Gin</p>
+        </div>
+        <div class="tech-category">
+          <h3>Infrastructure</h3>
+          <p>Kubernetes, Helm, Docker, GCP, Azure</p>
+        </div>
+        <div class="tech-category">
+          <h3>Data</h3>
+          <p>PostgreSQL, MongoDB, Redis</p>
+        </div>
+      </div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+      <h2>Philosophy</h2>
+      <p>
+        I believe the best backend code is the code you delete. Simplifying architectures — removing unnecessary
+        dependencies, consolidating data stores, eliminating redundant abstractions — is often more valuable
+        than building new features. Good systems are the ones that are easy to debug at 2 AM.
+      </p>
+
+      <h2>Get in Touch</h2>
+      <p>
+        Find me on <a href="https://github.com/AatmanMantri" target="_blank">GitHub</a>.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .tech-category {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .tech-category h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+  }
+  .tech-category p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    color: var(--text-muted);
+  }
+  @media (max-width: 500px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
