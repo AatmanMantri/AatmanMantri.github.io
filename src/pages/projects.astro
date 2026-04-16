@@ -5,25 +5,32 @@ import Footer from '../components/Footer.astro';
 
 const projects = [
   {
-    title: 'Hot/Cold Storage Architecture for Large-Scale Imaging',
-    description: 'A reference architecture for a multi-service Go system with gateway ACL, hot/cold object storage, LRU eviction, and multi-cloud support. Designed for serving millions of large binary objects on-demand from archive storage.',
-    tags: ['Go', 'Kubernetes', 'GCP', 'Azure', 'Redis'],
+    title: 'Distributed Social Network (Raft Consensus)',
+    description: 'Built a fault-tolerant, distributed backend for a social networking application (Twitter clone) in Go. Implemented the Raft consensus algorithm from scratch for leader election and state machine replication, ensuring high availability and data consistency across nodes.',
+    tags: ['Go', 'Raft', 'gRPC', 'etcd'],
     github: null,
-    status: 'Coming Soon',
+    status: 'Write-up Soon',
   },
   {
-    title: 'Django API Optimization: From 48 Queries to 1',
-    description: 'Step-by-step optimization of a Django REST Framework API using CTE rewrites, N+1 elimination, polymorphic bypass, and a three-tier caching strategy. Includes benchmarks at each stage.',
-    tags: ['Python', 'Django', 'PostgreSQL', 'Redis'],
+    title: 'Panacea: Advanced Computer Vision Pipeline',
+    description: 'Implemented classical computer vision algorithms from first principles without relying on high-level APIs. Showcases implementations of histogram equalization, complex image panorama stitching via cross-correlation, and optical flow estimation.',
+    tags: ['Python', 'CV', 'Algorithms'],
     github: null,
-    status: 'Coming Soon',
+    status: 'Demo Soon',
   },
   {
-    title: 'Kubernetes Deployment Patterns',
-    description: 'Helm charts demonstrating blue-green deployments, proper probe configuration (exec vs tcpSocket trade-offs), multi-environment config management, and node pool tuning.',
-    tags: ['Kubernetes', 'Helm', 'DevOps'],
+    title: 'Cloud-Native Event Management Architecture',
+    description: 'Designed and deployed a serverless, microservice-driven architecture on AWS. Architected data pipelines utilizing DynamoDB for transactional storage and Elasticsearch (OpenSearch) for advanced querying and text search.',
+    tags: ['AWS', 'DynamoDB', 'Python', 'Serverless'],
     github: null,
-    status: 'Coming Soon',
+    status: null,
+  },
+  {
+    title: 'Big Data: NYC Crime Analysis',
+    description: 'Processed and analyzed large-scale NYPD shooting incident data using Hadoop MapReduce and PySpark. Generated geographic insights and visualized trends across NYC boroughs using interactive HTML/JS reports.',
+    tags: ['Hadoop', 'Spark', 'MapReduce'],
+    github: null,
+    status: null,
   },
 ];
 ---
