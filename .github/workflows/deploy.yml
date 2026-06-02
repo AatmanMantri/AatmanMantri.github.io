@@ -25,10 +25,13 @@ jobs:
         with:
           node-version: 22.x
           cache: npm
-      - name: Install dependencies
+      
+      - name: Install portfolio dependencies
         run: npm ci
-      - name: Build
+      
+      - name: Build portfolio
         run: npm run build
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
